@@ -1,0 +1,10 @@
+nginx:
+  build: .
+  ports:
+    - 80:80
+
+spec:
+  dockerfile: Dockerfile.spec
+  build: .
+  volumes:
+  - ./:/src
