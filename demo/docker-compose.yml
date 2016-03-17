@@ -8,3 +8,8 @@ spec:
   build: .
   volumes:
   - ./:/src
+
+backend:
+  build: backend
+  ports:
+    - 9292:9292
