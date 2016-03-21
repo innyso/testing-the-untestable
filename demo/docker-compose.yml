@@ -8,6 +8,8 @@ spec:
   build: .
   volumes:
   - ./:/src
+  links:
+  - nginx:www.iso-sample.com
 
 backend:
   build: backend
