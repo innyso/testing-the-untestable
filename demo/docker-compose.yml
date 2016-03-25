@@ -2,6 +2,9 @@ nginx:
   build: .
   ports:
     - 80:80
+  volumes:
+  - ./nginx-conf/:/etc/nginx/sites-enabled
+  - ./nginx-html/:/www/data
 
 spec:
   dockerfile: Dockerfile.spec
@@ -15,9 +18,3 @@ backend:
   build: backend
   ports:
     - 9292:9292
-
-watchtower:
-  image: centurylink/watchtower
-  volumes:
-  - /var/run/docker.sock:/var/run/docker.sock
-  command: --no-pull
