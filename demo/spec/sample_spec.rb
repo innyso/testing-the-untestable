@@ -1,8 +1,8 @@
 require 'airborne'
 
 describe "sample test" do
-  it 'should get something' do
+  it 'should redirect to www.iso-backend' do
     get 'http://www.iso-sample.com/sample'
-    print json_body
+    expect(json_body[:SERVER_NAME]).to eq "www.iso-backend.com"
   end
 end
