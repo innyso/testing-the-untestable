@@ -5,6 +5,8 @@ nginx:
   volumes:
   - ./nginx-conf/:/etc/nginx/sites-enabled
   - ./nginx-html/:/www/data
+  links:
+  - backend:www.iso-backend.com
 
 spec:
   dockerfile: Dockerfile.spec

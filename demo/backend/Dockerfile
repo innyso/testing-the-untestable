@@ -9,4 +9,4 @@ COPY GEMfile /app/Gemfile
 RUN bundle install
 COPY . /app
 EXPOSE 9292
-CMD ["bundle","exec","rackup", "--host", "::"]
+CMD ["bundle","exec","rackup", "--host", "0.0.0.0"]
