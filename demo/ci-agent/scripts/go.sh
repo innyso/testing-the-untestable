@@ -1,2 +1,2 @@
 #/bin/bash
-sudo docker ps
+sudo docker run hello-world
