@@ -5,9 +5,10 @@ ci-server:
     - 8154:8154
 
 ci-agent:
-  Dockerfile: Dockerfile.agent
-  build: ci-agent
+  dockerfile: Dockerfile.agent
+  build: .
   environment:
     GO_SERVER: 192.168.99.101
   volumes:
   - /var/run/docker.sock:/var/run/docker.sock
+  - /var/lib/go-agent/pipelines:/var/lib/go-agent/pipelines:rw
