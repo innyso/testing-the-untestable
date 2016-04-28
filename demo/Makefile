@@ -6,4 +6,5 @@ update-nginx-config:
 
 run-rspec:
 	docker-compose start spec
-	cat rspec-result.txt
+	sleep 2s
+	cat rspec-result.xml

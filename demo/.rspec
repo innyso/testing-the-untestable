@@ -1,4 +1,4 @@
 --color
 --require spec_helper
---format documentation
---out rspec-result.txt
+-f JUnit
+--out rspec-result.xml
