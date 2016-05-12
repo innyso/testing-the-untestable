@@ -8,6 +8,11 @@ nginx:
   links:
   - backend:www.iso-backend.com
 
+backend:
+  build: backend
+  ports:
+    - 9292:9292
+
 spec:
   dockerfile: Dockerfile.spec
   build: .
@@ -15,8 +20,3 @@ spec:
   - ./:/src
   links:
   - nginx:www.iso-sample.com
-
-backend:
-  build: backend
-  ports:
-    - 9292:9292

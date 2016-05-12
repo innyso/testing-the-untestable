@@ -5,4 +5,8 @@ describe "sample test" do
     get 'http://www.iso-sample.com/sample'
     expect(json_body[:SERVER_NAME]).to eq "www.iso-backend.com"
   end
+  it 'should return 404' do
+    get 'http://www.iso-sample.com/sample123'
+    expect_status 404
+  end
 end
