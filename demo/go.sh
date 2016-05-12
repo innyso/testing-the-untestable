@@ -5,8 +5,8 @@ sudo docker-compose up -d
 #need to sleep in case result is not here yet
 sleep 2s
 
-ret_code=sudo docker-compose ps -q spec | xargs sudo docker inspect -f '{{ .State.ExitCode }}'
-echo $ret_code
+exit_code=`sudo docker-compose ps -q spec | xargs sudo docker inspect -f '{{ .State.ExitCode }}'`
+echo $exit_code
 echo "========================="
-exit $ret_code
+exit $exit_code
 
