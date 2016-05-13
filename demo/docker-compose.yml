@@ -6,7 +6,7 @@ nginx:
   - ./nginx-conf/:/etc/nginx/sites-enabled
   - ./nginx-html/:/www/data
   links:
-  - backend:www.iso-backend.com
+  - backend:www.testing-backend.com
 
 backend:
   build: backend
