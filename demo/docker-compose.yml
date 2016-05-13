@@ -19,4 +19,4 @@ spec:
   volumes:
   - ./:/src
   links:
-  - nginx:www.iso-sample.com
+  - nginx:www.testing-sample.com
