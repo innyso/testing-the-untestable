@@ -11,6 +11,6 @@ ci-agent:
     GO_SERVER: www.ci-server.com
   volumes:
   - /var/run/docker.sock:/var/run/docker.sock
-  - ./go-agent/pipelines:/var/lib/go-agent/pipelines:rw
+  - /var/lib/go-agent/pipelines:/var/lib/go-agent/pipelines:rw
   links:
   - ci-server:www.ci-server.com
