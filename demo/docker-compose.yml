@@ -17,6 +17,6 @@ spec:
   dockerfile: Dockerfile.spec
   build: .
   volumes:
-  - /Users/inny/Documents/testing-the-untestable/demo/agent/pipelines/testing/demo/ci/go-agent/pipelines/testing/demo:/src
+  - ./demo:/src
   links:
   - nginx:www.testing-sample.com
