@@ -5,6 +5,6 @@ update-nginx-config:
 	docker exec demo_nginx_1 nginx -s reload
 
 run-rspec:
-	docker-compose start spec
+	docker-compose up -d
 	sleep 2s
 	cat rspec-result.xml
