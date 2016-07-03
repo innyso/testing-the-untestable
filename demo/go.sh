@@ -10,6 +10,6 @@ exit_code=`sudo docker-compose ps -q spec | xargs sudo docker inspect -f '{{ .St
 
 #cleanup
 sudo docker-compose stop
-sudo docker-compose rm
+yes | sudo docker-compose rm
 exit $exit_code
 
