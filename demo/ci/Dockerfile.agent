@@ -11,3 +11,4 @@ RUN echo go ALL=NOPASSWD: /usr/bin/docker >> /etc/sudoers
 RUN echo go ALL=NOPASSWD: /usr/local/bin/docker-compose >> /etc/sudoers
 
 VOLUME "/var/run/docker.sock"
+VOLUME "/var/lib/go-agent/pipelines"
