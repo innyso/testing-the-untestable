@@ -4,6 +4,7 @@ MAINTAINER IS
 WORKDIR /app
 RUN apk update && apk add ruby ruby-io-console ruby-json yaml build-base
 COPY gemrc /etc/gemrc
+RUN gem update --system
 RUN gem install bundler
 COPY GEMfile /app/Gemfile
 RUN bundle install
