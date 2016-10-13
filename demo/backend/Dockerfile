@@ -2,8 +2,7 @@ FROM alpine
 MAINTAINER IS
 
 WORKDIR /app
-RUN apk update && apk add ruby ruby-io-console ruby-json yaml build-base
-RUN openssl version
+RUN apk update && apk add ruby ruby-io-console ruby-json yaml build-base openssl
 COPY gemrc /etc/gemrc
 RUN gem update --system
 RUN gem install bundler
