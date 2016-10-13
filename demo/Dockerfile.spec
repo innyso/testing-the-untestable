@@ -1,10 +1,9 @@
-FROM alpine
+FROM ubuntu
 MAINTAINER IS
 
 WORKDIR /src
-RUN apk update && apk add ruby ruby-io-console ruby-json yaml build-base
+RUN apt-get update && apt-get -y install ruby
 COPY gemrc /etc/gemrc
-RUN gem update --system
 RUN gem install bundler
 RUN apk add ruby-dev make gcc
 COPY Gemfile /src/Gemfile
