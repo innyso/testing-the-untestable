@@ -8,4 +8,4 @@ RUN gem install bundler
 COPY Gemfile /src/Gemfile
 COPY .rspec /src/.rspec
 RUN bundle install
-ENTRYPOINT ["/usr/bin/rspec"]
+ENTRYPOINT ["/usr/local/bin/rspec"]
