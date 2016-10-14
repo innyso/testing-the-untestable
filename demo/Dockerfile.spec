@@ -2,7 +2,7 @@ FROM ubuntu
 MAINTAINER IS
 
 WORKDIR /src
-RUN apt-get update && apt-get -y install ruby ruby-dev build-essential g++
+RUN apk update && apk add ruby ruby-io-console ruby-json yaml build-base ca-certificates
 COPY gemrc /etc/gemrc
 RUN gem install bundler
 COPY Gemfile /src/Gemfile
