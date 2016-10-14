@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM alpine
 MAINTAINER IS
 
 WORKDIR /app
