@@ -10,6 +10,6 @@ exit_code=`docker-compose ps -q spec | xargs docker inspect -f '{{ .State.ExitCo
 
 #cleanup
 docker-compose stop
-yes | sudo docker-compose rm
+yes | docker-compose rm
 exit $exit_code
 
