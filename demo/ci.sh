@@ -11,8 +11,4 @@ exit_code=`docker-compose ps -q spec | xargs docker inspect -f '{{ .State.ExitCo
 #cleanup
 docker-compose stop
 yes | docker-compose rm
-
-ls -la
-cat rspec-result.txt
-echo $exit_code
 exit $exit_code
