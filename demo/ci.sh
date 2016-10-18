@@ -13,3 +13,6 @@ docker-compose stop
 yes | docker-compose rm
 exit $exit_code
 
+ls -la
+cat rspec-result.txt
+echo $exit_code
