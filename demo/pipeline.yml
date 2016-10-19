@@ -1,0 +1,49 @@
+---
+resources:
+- name: resource-tutorial
+  type: git
+  source:
+    uri: https://github.com/innyso/testing-the-untestable.git
+
+jobs:
+- name: run-reverse-proxy-test
+  public: true
+  plan:
+  - get: resource-tutorial
+  - task: run-test
+    privileged: true
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: "mumoshu/dcind", tag: "latest"}
+      inputs:
+      - name: resource-tutorial
+      outputs:
+      - name: test-result
+      run:
+        path: sh
+        args: 
+          - -exec
+          - |
+            source /docker-lib.sh
+            start_docker
+            cd resource-tutorial/demo
+            ./ci.sh
+            ls -la
+            cp rspec-result.txt ../../test-result/
+  - task: check test-result
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: "alpine", tag: "latest"}
+      inputs:
+      - name: test-result
+      run:
+        path: sh
+        args:
+          - -exec
+          - |
+            sleep 2
+            cat test-result/rspec-result.txt
